@@ -1,0 +1,25 @@
+{
+  "name": "scjs-jqngre-places",
+  "version": "1.0.0",
+  "description": "\"Places\" demo-app built in: jQuery, Angular 1, React 15, simplified from todomvc for talk given July 13, 2016 at Santa Cruz JavaScript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffreypriebe/scjs-jQNgRe-Places"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "author": {
+    "name": "Jeffrey Priebe",
+    "email": "jeffreypriebe@gmail.com",
+    "url": "https://twitter.com/jeffreypriebe"
+  },
+  "license": "SEE LICENSE IN LICENSE (MIT)",
+  "devDependencies": {
+    "eslint": "^3.0.1",
+    "eslint-plugin-react": "^5.2.2"
+  }
+}

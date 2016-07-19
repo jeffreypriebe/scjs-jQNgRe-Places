@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Places : Angular</title>
+		
+		<link rel="stylesheet" href="../css/main.css">
+	</head>
+	<body ng-app="places" ng-controller="PlacesCtrl">
+		<section id="todoapp">
+			<header id="header">
+				<h1>Places : Angular</h1>
+				<div id="links">
+					<a href="../jQuery/index.html">jQuery</a>
+					<a href="../angular/index.html">Angular</a>
+					<a href="../react/index.html">React</a>
+					<a href="../reset.html">RESET</a>
+				</div>
+				<form ng-submit="add()" name="newPlace">
+					<input id="new-title" ng-model="newTitle" placeholder="Name" autofocus>
+					<input id="new-photo" type="file" placeholder="Image" accept=".jpg,.png" onchange="angular.element(this).scope().setFile(this)">
+					<button id="add-new" type="submit" ng-click="reset(newPlace)">Add to List</button>
+				</form>
+			</header>
+			<section id="main">
+				<ul id="todo-list">
+					<li ng-repeat="place in places" ng-class="{editing: place == editingPlace}">
+						<img alt="{{place.image.filename}}" src="{{place.image.data}}" />
+						<a href="#" class="remove" ng-click="del(place)">x</a>
+						<span class="title view" ng-show="place != editingPlace" ng-click="edit(place, $event)">{{place.title}}</span>
+						<input class="edit" ng-show="place == editingPlace" ng-keyup="edited(place, $event)" ng-model="place.title" focus-on="{{place.id}}" />
+					</li>
+				</ul>
+			</section>
+		</section>
+		
+		
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="node_modules/angular-resource/angular-resource.js"></script>
+		
+		<script src="../js/util.js"></script>
+		
+		<script src="js/app.js"></script>
+		<script src="js/controllers/placesCtrl.js"></script>
+		<script src="js/services/placesStorage.js"></script>
+		<script src="js/directives/focus.js"></script>
+	</body>
+</html>
